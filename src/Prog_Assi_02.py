@@ -55,16 +55,16 @@ classifier = Sequential()
 # You might use the following parameters: activation: 'relu' and/or 'sigmoid', optimization function is 'adam', loss function is 'binary_crossentropy', number of epochs is 100, samples per epoch are 10) 
 
 # Adding the input layer and the first hidden layer
-classifier.add(Dense(units = 6, kernel_initializer = 'uniform', activation = 'relu', input_dim = 11))
+classifier.add(Dense(units=6, kernel_initializer='uniform', activation='relu', input_dim=11))
 
 # Adding second hidden layer
-classifier.add(Dense(units = 6, kernel_initializer = 'uniform', activation = 'relu'))
+classifier.add(Dense(units=6, kernel_initializer='uniform', activation='relu'))
 
 # Adding output layer
-classifier.add(Dense(units = 1, kernel_initializer = 'uniform', activation = 'sigmoid'))
+classifier.add(Dense(units=1, kernel_initializer='uniform', activation='sigmoid'))
 
 # Compiling the ANN
-classifier.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy'])
+classifier.compile(optimizer='adam', loss='binary_crossentropy', metrics = ['accuracy'])
 
 # Fitting the ANN to the training set
 classifier.fit(X_train, y_train, batch_size = 10, epochs = 100)
@@ -74,6 +74,12 @@ y_pred = classifier.predict(X_test)
 y_pred = (y_pred > 0.5)
 
 # Making the confusion Matrix
-from sklearn.metrics import confusion_matrix
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 cm = confusion_matrix(y_test, y_pred)
+
+print(cm)
+
+disp = ConfusionMatrixDisplay(confusion_matrix=cm)
+disp.plot()
+plt.show()
 
