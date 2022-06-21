@@ -27,7 +27,7 @@ labelencoder_X_1 = LabelEncoder()
 X[:, 1] = labelencoder_X_1.fit_transform(X[:, 1])
 labelencoder_X_2 = LabelEncoder()
 X[:, 2] = labelencoder_X_2.fit_transform(X[:, 2])
-ct1 = ColumnTransformer([("Geography", OneHotEncoder(), [1])], remainder='passthrough')
+ct1 = ColumnTransformer([("Location", OneHotEncoder(), [1])], remainder='passthrough')
 X = ct1.fit_transform(X)
 X = X[:, 1:]
 
