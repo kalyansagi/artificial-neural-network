@@ -27,8 +27,8 @@ labelencoder_X_1 = LabelEncoder()
 X[:, 1] = labelencoder_X_1.fit_transform(X[:, 1])
 labelencoder_X_2 = LabelEncoder()
 X[:, 2] = labelencoder_X_2.fit_transform(X[:, 2])
-ct1 = ColumnTransformer([("Location", OneHotEncoder(), [1])], remainder='passthrough')
-X = ct1.fit_transform(X)
+columnTransformer = ColumnTransformer([("Location", OneHotEncoder(), [1])], remainder='passthrough')
+X = columnTransformer.fit_transform(X)
 X = X[:, 1:]
 
 # Splitting the dataset into the Training set and Test set
