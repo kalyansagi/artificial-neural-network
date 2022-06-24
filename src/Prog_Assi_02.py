@@ -52,13 +52,14 @@ from keras.layers import Dense
 # Initializing the ANN
 classifier = Sequential()
 
-# You might use the following parameters: activation: 'relu' and/or 'sigmoid', optimization function is 'adam', loss function is 'binary_crossentropy', number of epochs is 100, samples per epoch are 10) 
+# You might use the following parameters: activation: 'relu' and/or 'sigmoid', optimization function is 'adam', loss function is 'binary_crossentropy', number of epochs is 100, samples per epoch are 10)
 
 # Adding the input layer and the first hidden layer
-classifier.add(Dense(units=6, kernel_initializer='uniform', activation='relu', input_dim=11))
+classifier.add(Dense(units=25, kernel_initializer='uniform', activation='relu', input_dim=11))
+classifier.add(Dense(units=15, kernel_initializer='uniform', activation='relu'))
 
 # Adding second hidden layer
-classifier.add(Dense(units=6, kernel_initializer='uniform', activation='relu'))
+classifier.add(Dense(units=15, kernel_initializer='uniform', activation='relu'))
 
 # Adding output layer
 classifier.add(Dense(units=1, kernel_initializer='uniform', activation='sigmoid'))
