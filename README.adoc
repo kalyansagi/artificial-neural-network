@@ -1,0 +1,24 @@
+# artificial-neural-network
+
+== What does this application do?
+
+This is a simple python application to build an artificial neural network (ANN) model to predict a list of bank accounts (Acc_Closed - (ys)) at risk of closing (what account is more likely to be closed or opened?). Bank_Predictions.csv is the provided dataset. Ignore the first three features of the dataset (Number, Customer_ID, and Last_Name) because they don't impact the prediction. Use the rest features to predict the accounts that are more likely to be closed.
+
+
+== Technical Details
+- Python Documentation: link:https://www.python.org/[Python]
+- Version control: git
+- IDE: Pycharm (Pure Python Project with venv)
+
+
+
+== Developer Guide to run the code locally
+==== `git clone https://github.com/kalyansagi/artificial-neural-network.git`
+
+==== `cd /artificial-neural-network`
+
+==== `git checkout master`
+
+
+
+
